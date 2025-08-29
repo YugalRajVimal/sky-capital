@@ -80,42 +80,25 @@ const AdminDashboard = () => {
         />
         <StatCard
           icon={<FaUserCheck />}
-          label="Subscribed Users"
+          label="Currently Invested Users"
           value={dashboardDetails?.totalSubscribedUsers}
           color="green"
         />
         <StatCard
           icon={<FaUserTimes />}
-          label="Unsubscribed Users"
+          label="Currently Non-Invested Users"
           value={
             (dashboardDetails?.totalUsers || 0) -
             (dashboardDetails?.totalSubscribedUsers || 0)
           }
           color="red"
         />
-        <StatCard
-          icon={<FaDollarSign />}
-          label="Subscription Amount"
-          value={`$${dashboardDetails?.subscriptionAmount}`}
-          color="purple"
-        />
+
         <StatCard
           icon={<FaDollarSign />}
           label="Company Turnover"
           value={`$${dashboardDetails?.CompanyTurnOver}`}
           color="teal"
-        />
-        <StatCard
-          icon={<FaMedal />}
-          label="Weekly Royalty Achievers"
-          value={dashboardDetails?.WeekRoyaltyAchieverCount}
-          color="yellow"
-        />
-        <StatCard
-          icon={<FaMedal />}
-          label="10-Day Royalty Achievers"
-          value={dashboardDetails?.TenDaysRoyaltyAchieverCount}
-          color="orange"
         />
       </div>
 

@@ -9,6 +9,7 @@ const PurchaseSubscription = () => {
   const { purchaseSubscription } = useContext(CustomerContext);
   const [paymentScreenshot, setPaymentScreenshot] = useState(null);
   const [hashString, setHashString] = useState("");
+  const [amount, setAmount] = useState(""); // Added amount state
   const { getPaymentDetails } = useContext(AdminContext);
   const [showQRCode, setShowQRCode] = useState(false);
   const { logout } = useContext(AuthContext);
@@ -29,18 +30,48 @@ const PurchaseSubscription = () => {
     handleGetOldPaymentLink();
   }, []);
 
+  // Function to determine the plan based on the amount
+  const getPlanForAmount = (investmentAmount) => {
+    const numAmount = parseFloat(investmentAmount);
+    if (isNaN(numAmount) || numAmount <= 0) {
+      return null; // No plan displayed for invalid or zero/negative amounts
+    }
+    if (numAmount >= 100 && numAmount <= 999) {
+      return { name: "Plan 1", roi: "0.40%/day" };
+    }
+    if (numAmount >= 1000 && numAmount <= 4999) {
+      return { name: "Plan 2", roi: "0.50%/day" };
+    }
+    if (numAmount >= 5000) {
+      return { name: "Plan 3", roi: "0.60%/day" };
+    }
+    return { name: "No Plan", roi: "Amount too low for any plan (min $100)" }; // For amounts < 100
+  };
+
+  // Derived state for the current plan based on the amount input
+  const currentPlan = getPlanForAmount(amount);
+
   const handlePurchase = async () => {
-    if (paymentScreenshot && hashString) {
+    if (paymentScreenshot && hashString && amount) {
+      const numAmount = parseFloat(amount);
+      if (isNaN(numAmount) || numAmount < 100) {
+        toast.error("Please enter a valid investment amount (minimum $100).");
+        return;
+      }
+
       const response = await purchaseSubscription(
         paymentScreenshot,
-        hashString
+        hashString,
+        amount
       );
       if (response.status === 211) {
         await logout();
         window.location.href = "/login";
       }
     } else {
-      toast.error("Payment screenshot and transaction hash are required.");
+      toast.error(
+        "Payment screenshot, transaction hash, and amount are required."
+      );
     }
   };
 
@@ -109,7 +140,7 @@ const PurchaseSubscription = () => {
           )}
         </div>
 
-        {/* Upload + Transaction Hash */}
+        {/* Upload + Transaction Hash + Amount */}
         <div className="w-full bg-white/10 backdrop-blur-md rounded-2xl shadow-md p-6 mb-8">
           <label
             htmlFor="paymentScreenshot"
@@ -130,6 +161,26 @@ const PurchaseSubscription = () => {
             onChange={(e) => setPaymentScreenshot(e.target.files[0])}
             className="hidden"
           />
+
+          <div className="mt-6">
+            <input
+              type="number"
+              id="amount"
+              value={amount}
+              onWheel={(e) => e.target.blur()}
+              onChange={(e) => setAmount(e.target.value)}
+              placeholder="Enter your Investment Amount"
+              className="w-full px-4 py-3 rounded-xl border border-gray-500 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9ae600]"
+            />
+            {currentPlan && (
+              <p className="text-sm text-gray-300 mt-2 text-center">
+                You are investing for:{" "}
+                <span className="font-bold text-[#9ae600]">
+                  {currentPlan.name} ({currentPlan.roi})
+                </span>
+              </p>
+            )}
+          </div>
 
           <div className="mt-6">
             <input

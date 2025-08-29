@@ -106,12 +106,17 @@ export const CustomerProvider = ({ children }) => {
     }
   };
 
-  const purchaseSubscription = async (paymentScreenshot, hashString) => {
+  const purchaseSubscription = async (
+    paymentScreenshot,
+    hashString,
+    amount
+  ) => {
     try {
       const token = localStorage.getItem("token");
       const formData = new FormData();
       formData.append("paymentScreenshot", paymentScreenshot);
       formData.append("hashString", hashString);
+      formData.append("amount", amount);
 
       const response = await axios.post(
         `${

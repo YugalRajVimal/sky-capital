@@ -46,17 +46,17 @@ const Wallets = () => {
   const incomeReports = [
     {
       title: "ROI Wallet",
-      value: `$${customerProfileData?.totalEarning?.toFixed(2) || "0.00"}`,
+      value: `$${customerProfileData?.roiWallet?.toFixed(2) || "0.00"}`,
       icon: <FaWallet className="text-blue-500 h-6 w-6" />,
     },
     {
       title: "Main Wallet",
-      value: `$${customerProfileData?.mainWalletBalance?.toFixed(2) || "0.00"}`,
+      value: `$${customerProfileData?.mainWallet?.toFixed(2) || "0.00"}`,
       icon: <FaWallet className="text-green-500 h-6 w-6" />,
     },
     {
       title: "Pending Wallet",
-      value: `$${customerProfileData?.walletBalance?.toFixed(2) || "0.00"}`,
+      value: `$${customerProfileData?.pendingWallet?.toFixed(2) || "0.00"}`,
       icon: <FaWallet className="text-red-500 h-6 w-6" />,
     },
   ];

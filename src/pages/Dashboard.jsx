@@ -42,17 +42,17 @@ const Dashboard = () => {
   const walletReports = [
     {
       title: "ROI Wallet",
-      value: `$${customerProfileData?.totalEarning?.toFixed(2) || "0.00"}`,
+      value: `$${customerProfileData?.roiWallet?.toFixed(2) || "0.00"}`,
       icon: <FaWallet className="text-blue-500 h-6 w-6" />,
     },
     {
       title: "Main Wallet",
-      value: `$${customerProfileData?.mainWalletBalance?.toFixed(2) || "0.00"}`,
+      value: `$${customerProfileData?.mainWallet?.toFixed(2) || "0.00"}`,
       icon: <FaWallet className="text-green-500 h-6 w-6" />,
     },
     {
       title: "Pending Wallet",
-      value: `$${customerProfileData?.walletBalance?.toFixed(2) || "0.00"}`,
+      value: `$${customerProfileData?.pendingWallet?.toFixed(2) || "0.00"}`,
       icon: <FaWallet className="text-red-500 h-6 w-6" />,
     },
   ];
@@ -105,19 +105,22 @@ const Dashboard = () => {
   const incomeCards = [
     {
       title: "Total Income",
-      value: "$0",
+      value: `$${(
+        (customerProfileData?.mainWallet || 0) +
+        (customerProfileData?.roiWallet || 0)
+      ).toFixed(2)}`,
       color: "bg-green-900",
       icon: <FaMoneyBillWave className="text-green-400 h-6 w-6" />,
     },
     {
       title: "ROI Income",
-      value: "$0",
+      value: `$${customerProfileData?.roiWallet?.toFixed(2) || "0.00"}`,
       color: "bg-orange-900",
       icon: <FaCoins className="text-orange-400 h-6 w-6" />,
     },
     {
       title: "Refer Income",
-      value: "$0",
+      value: `$${customerProfileData?.referIncome?.toFixed(2) || "0.00"}`,
       color: "bg-purple-900",
       icon: <FaUsers className="text-purple-400 h-6 w-6" />,
     },
@@ -129,17 +132,59 @@ const Dashboard = () => {
     },
     {
       title: "Refer Bonus ",
-      value: "$0",
+      value: `$${customerProfileData?.referBonusIncome?.toFixed(2) || "0.00"}`,
       color: "bg-teal-900",
       icon: <FaGift className="text-teal-400 h-6 w-6" />,
     },
     {
-      title: "Reward Team Bonus",
-      value: "$0",
+      title: "Reward Team Business",
+      value: `$${
+        customerProfileData?.rewardTeamBusinessIncome?.toFixed(2) || "0.00"
+      }`,
       color: "bg-pink-900",
       icon: <FaBusinessTime className="text-pink-400 h-6 w-6" />,
     },
   ];
+
+  // const pendingIncomeCards = [
+  //   {
+  //     title: "Pending Total Income",
+  //     value: `$${(customerProfileData?.pendingWallet || 0).toFixed(2)}`,
+  //     color: "bg-green-900",
+  //     icon: <FaMoneyBillWave className="text-green-400 h-6 w-6" />,
+  //   },
+  //   {
+  //     title: "Pending Refer Income",
+  //     value: `$${
+  //       customerProfileData?.pendingReferIncome?.toFixed(2) || "0.00"
+  //     }`,
+  //     color: "bg-purple-900",
+  //     icon: <FaUsers className="text-purple-400 h-6 w-6" />,
+  //   },
+  //   // {
+  //   //   title: "Pending ROI to Level Income",
+  //   //   value: "$0",
+  //   //   color: "bg-blue-900",
+  //   //   icon: <FaChartLine className="text-blue-400 h-6 w-6" />,
+  //   // },
+  //   {
+  //     title: "Pending Refer Bonus",
+  //     value: `$${
+  //       customerProfileData?.pendingReferBonusIncome?.toFixed(2) || "0.00"
+  //     }`,
+  //     color: "bg-teal-900",
+  //     icon: <FaGift className="text-teal-400 h-6 w-6" />,
+  //   },
+  //   {
+  //     title: "Pending Reward Team Business",
+  //     value: `$${
+  //       customerProfileData?.pendingRewardTeamBusinessIncome?.toFixed(2) ||
+  //       "0.00"
+  //     }`,
+  //     color: "bg-pink-900",
+  //     icon: <FaBusinessTime className="text-pink-400 h-6 w-6" />,
+  //   },
+  // ];
 
   // Stats Section (grouped & styled)
   const statsSections = [
@@ -148,8 +193,8 @@ const Dashboard = () => {
       cards: [
         {
           title: "Total Deposit",
-          value: 0,
-          color: "bg-green-900",
+          value: `$${customerProfileData?.investment?.toFixed(2) || "0.00"}`,
+          color: "bg",
           icon: <FaArrowCircleDown className="text-green-400 h-6 w-6" />,
         },
         {
@@ -188,20 +233,20 @@ const Dashboard = () => {
         {
           title: "Direct Team Members",
           value: 0,
-          color: "bg-indigo-900",
-          icon: <FaUsers className="h-6 w-6" />,
+          color: "",
+          icon: <FaUsers className="h-6 w-6 text-indigo-400" />,
         },
         {
           title: "Level Team Members (3)",
           value: 0,
-          color: "bg-green-900",
-          icon: <FaUserFriends className="h-6 w-6" />,
+          color: "",
+          icon: <FaUserFriends className="h-6 w-6 text-green-400" />,
         },
         {
           title: "Global Team Count",
           value: 0,
-          color: "bg-blue-900",
-          icon: <FaGlobe className="h-6 w-6" />,
+          color: "",
+          icon: <FaGlobe className="h-6 w-6 text-blue-400" />,
         },
       ],
     },
@@ -212,20 +257,20 @@ const Dashboard = () => {
         {
           title: "Direct Team Members",
           value: 0,
-          color: "bg-yellow-900",
-          icon: <FaUsers className="h-6 w-6" />,
+          color: "",
+          icon: <FaUsers className="h-6 w-6 text-yellow-400" />,
         },
         {
           title: "Level Team Members (3)",
           value: 0,
-          color: "bg-orange-900",
-          icon: <FaUserFriends className="h-6 w-6" />,
+          color: "",
+          icon: <FaUserFriends className="h-6 w-6 text-orange-400" />,
         },
         {
           title: "Global Team Count",
           value: 0,
-          color: "bg-red-900",
-          icon: <FaGlobe className="h-6 w-6" />,
+          color: "",
+          icon: <FaGlobe className="h-6 w-6 text-red-400" />,
         },
       ],
     },
@@ -275,16 +320,18 @@ const Dashboard = () => {
           <div className="w-full md:w-1/2 p-5 rounded-lg flex md:flex-row flex-col gap-4 justify-between md:items-center shadow-lg bg-gradient-to-br from-[#1e2550] to-[#14172b] border border-gray-700 hover:scale-[1.02] transition">
             <div>
               <div className="font-semibold">Your Referral Link</div>
-              <div className="text-sm text-gray-300 truncate max-w-[200px]">
-                {customerProfileData?.referalLink ||
-                  "https://example.com/ref/12345"}
+              <div className="text-sm text-gray-300 truncate ">
+                {`${import.meta.env.VITE_DOMAIN}/signup?referId=${
+                  customerProfileData?.referalId
+                }` || "Something went wrong"}
               </div>
             </div>
             <button
               onClick={() =>
                 handleCopy(
-                  customerProfileData?.referalLink ||
-                    "https://example.com/ref/12345"
+                  `${import.meta.env.VITE_DOMAIN}/signup?referId=${
+                    customerProfileData?.referalId
+                  }` || "https://example.com/ref/12345"
                 )
               }
               className="bg-blue-500  px-2 py-1 md:px-4 md:py-2 rounded-lg flex items-center justify-center gap-2"
@@ -313,6 +360,25 @@ const Dashboard = () => {
           ))}
         </div>
       </div>
+
+      {/* Pending Income Section */}
+      {/* <div>
+        <h2 className="text-xl font-bold mb-4">Pending Income</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {pendingIncomeCards.map((card, idx) => (
+            <div
+              key={idx}
+              className={`p-5 rounded-lg flex justify-between items-center shadow-lg bg-gradient-to-br from-[#1e2550] to-[#14172b] border border-gray-700 hover:scale-[1.02] transition`}
+            >
+              <div className="flex items-center gap-3">
+                {card.icon}
+                <span className="text-lg font-semibold">{card.title}</span>
+              </div>
+              <div className="text-2xl font-bold mt-2">{card.value}</div>
+            </div>
+          ))}
+        </div>
+      </div> */}
       {/* Stats Section */}
 
       <div>
@@ -322,18 +388,18 @@ const Dashboard = () => {
             <div key={idx}>
               <h3 className="text-lg font-semibold mb-3">{section.heading}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {section.cards.map((stat, i) => (
+                {section.cards.map((card, i) => (
                   <div
-                    key={i}
+                    key={idx}
                     className={`p-5 rounded-lg flex justify-between items-center shadow-lg bg-gradient-to-br from-[#1e2550] to-[#14172b] border border-gray-700 hover:scale-[1.02] transition`}
                   >
                     <div className="flex items-center gap-3">
-                      {stat.icon}
-                      <span className="text-sm text-gray-200">
-                        {stat.title}
+                      {card.icon}
+                      <span className="text-lg font-semibold">
+                        {card.title}
                       </span>
                     </div>
-                    <div className="text-xl font-bold mt-2">{stat.value}</div>
+                    <div className="text-2xl font-bold mt-2">{card.value}</div>
                   </div>
                 ))}
               </div>
@@ -352,22 +418,18 @@ const Dashboard = () => {
                 {section.heading}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {section.cards.map((stat, i) => (
+                {section.cards.map((card, i) => (
                   <div
-                    key={i}
+                    key={idx}
                     className={`p-5 rounded-lg flex justify-between items-center shadow-lg bg-gradient-to-br from-[#1e2550] to-[#14172b] border border-gray-700 hover:scale-[1.02] transition`}
                   >
-                    <div className="flex items-center justify-center gap-2">
-                      {/* Icon Badge */}
-                      <div
-                        className={`w-10 h-10 flex items-center justify-center rounded-full ${stat.color} `}
-                      >
-                        {stat.icon}
-                      </div>
-                      <div className="text-sm text-gray-300">{stat.title}</div>
+                    <div className="flex items-center gap-3">
+                      {card.icon}
+                      <span className="text-lg font-semibold">
+                        {card.title}
+                      </span>
                     </div>
-
-                    <div className="text-2xl font-bold mt-1">{stat.value}</div>
+                    <div className="text-2xl font-bold mt-2">{card.value}</div>
                   </div>
                 ))}
               </div>

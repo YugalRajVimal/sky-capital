@@ -106,6 +106,7 @@ const ApprovePendingSubscription = () => {
               <th className="p-3">Name</th>
               <th className="p-3">Email</th>
               <th className="p-3">Phone</th>
+              <th className="p-3">Amount</th>
               <th className="p-3">Transaction Hash</th>
               <th className="p-3">View Payment</th>
               <th className="p-3">Action</th>
@@ -136,6 +137,7 @@ const ApprovePendingSubscription = () => {
                     <td className="p-2">{user?.userId?.name || "-"}</td>
                     <td className="p-2">{user?.userId?.email || "-"}</td>
                     <td className="p-2">{user?.userId?.phoneNo || "-"}</td>
+                    <td className="p-2">${user?.amount || "-"}</td>
                     <th className="p-3">{user?.hashString || "-"}</th>
                     <td className="p-2">
                       <ImagePreviewPopup src={user?.screenshotPath} />

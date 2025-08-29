@@ -133,7 +133,7 @@ const LevelTeam = (props) => {
                   <td className="p-2">{u.user?.phoneNo || "-"}</td>
                   <td className="p-2">{u.user?.sponsorName || "-"}</td>
                   <td className="p-2">
-                    {u.user?.referalEnabled ? u.user?.referalId : "N/A"}
+                    {u.user?.referalId }
                   </td>
                   <td className="p-2">{formatDate(u?.date)}</td>
                   <td className="p-2">{formatDate(u.user?.subscribedOn)}</td>
