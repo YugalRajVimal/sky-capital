@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
-import { CustomerContext } from "../../context/CustomerContext";
+import { CustomerContext } from "../../../context/CustomerContext";
 
-const LevelTeam = (props) => {
+const ReferTeamIncome = (props) => {
   const { getTeamDetails } = useContext(CustomerContext);
   const { levelIndex } = props;
+
+  const levelIncomePer = [0.05, 0.04, 0.02];
 
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
@@ -55,7 +57,7 @@ const LevelTeam = (props) => {
   return (
     <div className="grow-1 w-full h-full mt-2  p-3 p-5 rounded-2xl bg-[#20265d] shadow-lg overflow-y-auto pb-10 md:pb-3">
       <h2 className="text-xl font-semibold text-white md:px-6 py-3">
-        👥 Level {levelIndex} Users
+        👥 Level {levelIndex} User's Income
       </h2>
 
       {/* Filters */}
@@ -101,8 +103,8 @@ const LevelTeam = (props) => {
               <th className="p-3">Name</th>
               <th className="p-3">Email</th>
               <th className="p-3">Phone</th>
-              {/* <th className="p-3">Sponsor</th> */}
               <th className="p-3">Referral ID</th>
+              <th className="p-3">Income</th>
               {/* <th className="p-3">Join Date</th>
               <th className="p-3">Active Date</th> */}
               {/* <th className="p-3">Status</th> */}
@@ -132,8 +134,9 @@ const LevelTeam = (props) => {
                   <td className="p-2">{u.user?.email || "-"}</td>
                   <td className="p-2">{u.user?.phoneNo || "-"}</td>
                   {/* <td className="p-2">{u.user?.sponsorName || "-"}</td> */}
+                  <td className="p-2">{u.user?.referalId}</td>
                   <td className="p-2">
-                    {u.user?.referalId }
+                    ${u.user?.firstInvestment * levelIncomePer[levelIndex]}
                   </td>
                   {/* <td className="p-2">{formatDate(u?.date)}</td>
                   <td className="p-2">{formatDate(u.user?.subscribedOn)}</td> */}
@@ -182,4 +185,4 @@ const LevelTeam = (props) => {
   );
 };
 
-export default LevelTeam;
+export default ReferTeamIncome;

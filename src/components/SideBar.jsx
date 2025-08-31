@@ -40,11 +40,11 @@ const Sidebar = () => {
       icon: <FaMoneyCheckAlt />,
       link: "/purchase-subcription",
     },
-    {
-      label: "Investment History",
-      icon: <FaLayerGroup />,
-      link: "/purchase-subcription-histroy",
-    },
+    // {
+    //   label: "Investment History",
+    //   icon: <FaLayerGroup />,
+    //   link: "/purchase-subcription-histroy",
+    // },
     {
       label: "Wallets & Balance",
       icon: <FaWallet />,
@@ -96,11 +96,11 @@ const Sidebar = () => {
       icon: <FaUniversity />,
       arrow: true,
       subItems: [
-        { name: "ROI Income", link: "/roi-income" },
+        // { name: "ROI Income", link: "/roi-income" },
         { name: "Refer Income", link: "/refer-income" },
         { name: "Refer Bonus", link: "/refer-bonus" },
-        { name: "ROI to Level Income", link: "/roi-to-level-income" },
-        { name: "Reward Team Bonus", link: "/reward-team-bonus" },
+        // { name: "ROI to Level Income", link: "/roi-to-level-income" },
+        { name: "Reward Team Bussiness", link: "/reward-team-bussiness" },
       ],
     },
     // { label: "Single-Leg Team", icon: <FaTrophy />, link: "/single-leg" },
@@ -133,11 +133,11 @@ const Sidebar = () => {
         { name: "Deposite User History", link: "/deposite-to-user-history" },
       ],
     },
-    {
-      label: "All Logs",
-      icon: <FaClipboardList className="text-white" />,
-      link: "/all-logs",
-    },
+    // {
+    //   label: "All Logs",
+    //   icon: <FaClipboardList className="text-white" />,
+    //   link: "/all-logs",
+    // },
     {
       label: "Help",
       icon: <FaQuestionCircle className="text-white" />,

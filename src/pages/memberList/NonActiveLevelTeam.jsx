@@ -101,9 +101,9 @@ const NonActiveLevelTeam = ({ levelIndex }) => {
               <th className="p-3">Name</th>
               <th className="p-3">Email</th>
               <th className="p-3">Phone</th>
-              <th className="p-3">Sponsor</th>
+              {/* <th className="p-3">Sponsor</th> */}
               {/* <th className="p-3">Joined On</th> */}
-              <th className="p-3">Status</th>
+              {/* <th className="p-3">Status</th> */}
             </tr>
           </thead>
           <tbody>
@@ -129,9 +129,9 @@ const NonActiveLevelTeam = ({ levelIndex }) => {
                   <td className="p-2">{u.userId?.name || "-"}</td>
                   <td className="p-2">{u.userId?.email || "-"}</td>
                   <td className="p-2">{u.userId?.phoneNo || "-"}</td>
-                  <td className="p-2">{u.userId?.sponsorName || "-"}</td>
+                  {/* <td className="p-2">{u.userId?.sponsorName || "-"}</td> */}
                   {/* <td className="p-2">{formatDate(u.userId?.subscribedOn)}</td> */}
-                  <td className="p-2">
+                  {/* <td className="p-2">
                     <span
                       className={`px-2 py-1 rounded text-white text-xs ${
                         u.userId?.subscribed ? "bg-green-500" : "bg-red-500"
@@ -139,7 +139,7 @@ const NonActiveLevelTeam = ({ levelIndex }) => {
                     >
                       {u.userId?.subscribed ? "Active" : "Inactive"}
                     </span>
-                  </td>
+                  </td> */}
                 </tr>
               ))
             )}

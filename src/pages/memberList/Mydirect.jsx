@@ -99,11 +99,11 @@ const DirectTeamTable = () => {
               <th className="p-3">Name</th>
               <th className="p-3">Email</th>
               <th className="p-3">Phone</th>
-              <th className="p-3">Sponsor ID</th>
+              {/* <th className="p-3">Sponsor ID</th> */}
               <th className="p-3">Referral ID</th>
-              <th className="p-3">Join Date</th>
-              <th className="p-3">Active Date</th>
-              <th className="p-3">Status</th>
+              {/* <th className="p-3">Join Date</th> */}
+              {/* <th className="p-3">LastActive Date</th> */}
+              {/* <th className="p-3">Status</th> */}
             </tr>
           </thead>
           <tbody>
@@ -129,13 +129,13 @@ const DirectTeamTable = () => {
                     <td className="p-2">{user?.userId?.name || "-"}</td>
                     <td className="p-2">{user?.userId?.email || "-"}</td>
                     <td className="p-2">{user?.userId?.phoneNo || "-"}</td>
-                    <td className="p-2">{user?.userId?.sponsorId || "-"}</td>
+                    {/* <td className="p-2">{user?.userId?.sponsorId || "-"}</td> */}
                     <td className="p-2">{user?.userId?.referalId || "-"}</td>
-                    <td className="p-2">{formatDate(entry?.userId?.date)}</td>
-                    <td className="p-2">
+                    {/* <td className="p-2">{formatDate(entry?.userId?.createdAt)}</td> */}
+                    {/* <td className="p-2">
                       {formatDate(user?.userId?.subscribedOn)}
-                    </td>
-                    <td className="p-2">
+                    </td> */}
+                    {/* <td className="p-2">
                       <span
                         className={`px-2 py-1 rounded text-white text-xs ${
                           user?.userId?.subscribed
@@ -145,7 +145,7 @@ const DirectTeamTable = () => {
                       >
                         {user?.userId?.subscribed ? "Active" : "Inactive"}
                       </span>
-                    </td>
+                    </td> */}
                   </tr>
                 );
               })

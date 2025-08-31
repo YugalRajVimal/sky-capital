@@ -29,9 +29,16 @@ const ChangePassword = () => {
       return setError("New and Confirm Password do not match.");
     }
 
+    if (form.newPassword.length < 8) {
+      return setError("Password must be at least 8 characters long");
+    }
+    if (!/^(?=.*[a-zA-Z])(?=.*[0-9]).*$/.test(form.newPassword)) {
+      return setError("Password must be alphanumeric");
+    }
+
     try {
       await changePassword(form.oldPassword, form.newPassword);
-      setSuccess("Password changed successfully!");
+
       setForm({
         oldPassword: "",
         newPassword: "",

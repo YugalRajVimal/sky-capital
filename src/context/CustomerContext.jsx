@@ -197,12 +197,16 @@ export const CustomerProvider = ({ children }) => {
     }
   };
 
-  const sendWithdrawalRequest = async (requestAmount, walletAddress) => {
+  const sendWithdrawalRequest = async (
+    requestAmount,
+    walletAddress,
+    selectedWallet
+  ) => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/api/customer/withdrawal-request`,
-        { requestAmount, walletAddress },
+        { requestAmount, walletAddress, selectedWallet },
         {
           headers: {
             Authorization: `${token}`,
@@ -243,14 +247,13 @@ export const CustomerProvider = ({ children }) => {
     }
   };
 
-  const updateBankDetails = async (idType, bankId, walletQR) => {
-    console.log(idType, bankId, walletQR);
+  const updateBankDetails = async (idType, bankId) => {
+    console.log(idType, bankId);
     try {
       const token = localStorage.getItem("token");
       const formData = new FormData();
       formData.append("idType", idType);
       formData.append("bankId", bankId);
-      formData.append("walletQR", walletQR);
       const response = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/api/customer/update-bank-details`,
         formData,
@@ -275,12 +278,12 @@ export const CustomerProvider = ({ children }) => {
     }
   };
 
-  const transferAmount = async (userId, remark) => {
+  const transferAmount = async (userId, amount, remark) => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/api/customer/transfer-money`,
-        { userId, remark },
+        { userId, amount, remark },
         {
           headers: {
             Authorization: `${token}`,

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CustomerContext } from "../../context/CustomerContext";
-import { FaUserCircle } from "react-icons/fa";
+import { FaCopy, FaUserCircle } from "react-icons/fa";
 
 const Profile = () => {
   const { getProfileDetails } = useContext(CustomerContext);
@@ -32,9 +32,32 @@ const Profile = () => {
         {/* Details */}
         <div className="p-6 grid grid-cols-1 sm:grid-cols-2 gap-6 text-white rounded-b-2xl">
           <Field label="Phone Number" value={profileDetails?.phoneNo} />
-          <Field label="User ID" value={profileDetails?.userId} />
-          <Field label="Sponsor ID" value={profileDetails?.sponsorId} />
+
+          <div className="w-full break-words">
+            <p className="text-sm text-gray-500">User ID</p>
+            <div className="flex items-center gap-2">
+              <p className="text-base font-medium">
+                {profileDetails?.userId || "—"}
+              </p>
+              {profileDetails?.userId && (
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(profileDetails.userId);
+                    alert("User ID copied to clipboard!");
+                  }}
+                  className="text-gray-400 hover:text-white focus:outline-none"
+                  title="Copy User ID"
+                >
+                  {/* Note: FaCopy needs to be imported from 'react-icons/fa' at the top of the file. */}
+                  {/* Example: import { FaCopy } from "react-icons/fa"; */}
+                  <FaCopy />
+                </button>
+              )}
+            </div>
+          </div>
           {/* <Field label="Sponsor Name" value={profileDetails?.sponsorName} /> */}
+
+          <Field label="Sponsor ID" value={profileDetails?.sponsorId} />
           <Field label="Network Type" value={profileDetails?.idType} />
           <Field label="Wallet Address" value={profileDetails?.bankId} />
           {profileDetails?.referalId && (
@@ -51,7 +74,7 @@ const Profile = () => {
             }
           />
           <Field
-            label="Joined On"
+            label="Last Investment On"
             value={
               profileDetails?.joinedOn
                 ? new Date(profileDetails.joinedOn).toLocaleDateString(

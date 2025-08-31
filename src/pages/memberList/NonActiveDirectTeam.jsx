@@ -93,9 +93,9 @@ const NonActiveDirectTeamTable = () => {
               <th className="p-3">Name</th>
               <th className="p-3">Email</th>
               <th className="p-3">Phone</th>
-              <th className="p-3">Sponsor ID</th>
-              <th className="p-3">Active Date</th>
-              <th className="p-3">Status</th>
+              {/* <th className="p-3">Sponsor ID</th> */}
+              {/* <th className="p-3">Active Date</th> */}
+              {/* <th className="p-3">Status</th> */}
             </tr>
           </thead>
           <tbody>
@@ -121,7 +121,7 @@ const NonActiveDirectTeamTable = () => {
                     <td className="p-2">{user?.name || "-"}</td>
                     <td className="p-2">{user?.email || "-"}</td>
                     <td className="p-2">{user?.phoneNo || "-"}</td>
-                    <td className="p-2">{user?.sponsorId || "-"}</td>
+                    {/* <td className="p-2">{user?.sponsorId || "-"}</td>
                     <td className="p-2">{formatDate(user?.subscribedOn)}</td>
                     <td className="p-2">
                       <span
@@ -131,7 +131,7 @@ const NonActiveDirectTeamTable = () => {
                       >
                         {user?.subscribed ? "Active" : "Inactive"}
                       </span>
-                    </td>
+                    </td> */}
                   </tr>
                 );
               })

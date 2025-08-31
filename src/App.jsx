@@ -60,7 +60,7 @@ import TransferToMainWallet from "./pages/TransferToMainWallet/TransferToMainWal
 
 // User Pages - Income Details
 import SingleLegIncome from "./pages/SingleLegIncome";
-import ReferIncome from "./pages/Income Details/ReferIncome";
+import ReferIncome from "./pages/Income Details/ReferIncome/ReferIncome";
 import ReferBonus from "./pages/Income Details/ReferBonus";
 import ROIIncome from "./pages/Income Details/ROIIncome";
 import ROItoLevelIncome from "./pages/Income Details/ROItoLevelIncome";
@@ -101,6 +101,7 @@ import WeeklyRoyaltyAchiever from "./Admin/adminPages/WeeklyRoyaltyAchiever";
 import TenDaysRoyaltyAchiever from "./Admin/adminPages/TenDaysRoyaltyAchiever";
 import PurchaseSubscriptionHistory from "./pages/PurchaseSubscription/PurchaseSubscriptionHistory";
 import AllLogs from "./pages/AllLogs/AllLogs";
+import ReferTeamIncome from "./pages/Income Details/ReferIncome/ReferTeamIncome";
 
 function AppLayout() {
   const location = useLocation();
@@ -462,6 +463,19 @@ function AppLayout() {
                 </ProtectedRoute>
               }
             />
+
+            {[...Array(3).keys()].map((level) => (
+              <Route
+                key={level}
+                path={`/refer-team-income/${level}`}
+                element={
+                  <ProtectedRoute>
+                    <ReferTeamIncome levelIndex={level} />
+                  </ProtectedRoute>
+                }
+              />
+            ))}
+
             <Route
               path="/refer-bonus"
               element={
@@ -479,7 +493,7 @@ function AppLayout() {
               }
             />
             <Route
-              path="/reward-team-bonus"
+              path="/reward-team-bussiness"
               element={
                 <ProtectedRoute>
                   <RewardTeamBonus />

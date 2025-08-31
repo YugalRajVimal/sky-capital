@@ -114,6 +114,7 @@ const ApprovedWidhraw = () => {
               <th className="p-3">User ID & Name</th>
               <th className="p-3">Contact Info</th>
               <th className="p-3">Requested Amount - 5%</th>
+              <th className="p-3">Wallet Type</th>
               <th className="p-3">Wallet Address</th>
               <th className="p-3">Action</th>
             </tr>
@@ -152,6 +153,7 @@ const ApprovedWidhraw = () => {
                         <span>{user?.userId?.phoneNo || "-"}</span>
                       </div>
                     </td>
+
                     <td className="p-2">
                       $
                       {(user?.requestAmount
@@ -159,6 +161,14 @@ const ApprovedWidhraw = () => {
                         : "-"
                       ).toFixed(2)}
                     </td>
+                    <td className="p-3">
+                      {user?.walletType === "main"
+                        ? "Main Wallet"
+                        : user?.walletType === "roi"
+                        ? "ROI Wallet"
+                        : "-"}
+                    </td>
+
                     <td className="p-2">
                       <span>{user?.walletAddress || "-"}</span>
                       <button

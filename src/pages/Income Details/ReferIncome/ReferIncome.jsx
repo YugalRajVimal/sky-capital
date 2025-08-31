@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { CustomerContext } from "../../context/CustomerContext";
+import { CustomerContext } from "../../../context/CustomerContext";
 import { Link } from "react-router-dom";
 
 const ReferIncome = () => {
@@ -38,7 +38,7 @@ const ReferIncome = () => {
             <tr>
               <th className="p-3">Level</th>
               <th className="p-3">Team</th>
-              <th className="p-3">Income</th>
+              {/* <th className="p-3">Income</th> */}
               <th className="p-3">Action</th>
             </tr>
           </thead>
@@ -52,13 +52,13 @@ const ReferIncome = () => {
               >
                 <td className="p-3">{level + 1}</td>
                 <td className="p-3">{teamCount}</td>
-                <td className="p-3">
-                  ${(teamCount * levelIncome[index]).toFixed(2)}
-                </td>
+                {/* <td className="p-3">
+                  ${(teamCount * levelIncome[index] ).toFixed(2)}
+                </td> */}
 
                 <td className="p-3">
                   <Link
-                    to={`/level-team/${level}`}
+                    to={`/refer-team-income/${level}`}
                     className="text-blue-600 hover:underline font-medium"
                   >
                     View Team

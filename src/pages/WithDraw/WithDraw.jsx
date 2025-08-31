@@ -6,7 +6,7 @@ const Withdraw = () => {
 
   const { getCustomerProfileDetails } = useContext(CustomerContext);
   const [customerProfileData, setCustomerProfileData] = useState();
-  const [selectedWallet, setSelectedWallet] = useState();
+  const [selectedWallet, setSelectedWallet] = useState("main");
 
   useEffect(() => {
     const fetchCustomerProfileDetails = async () => {
@@ -29,7 +29,9 @@ const Withdraw = () => {
       toast.error("Both request amount and wallet address are required.");
       return;
     }
-    await sendWithdrawalRequest(requestAmount, walletAddress);
+    // console.log(requestAmount, walletAddress, selectedWallet);
+
+    await sendWithdrawalRequest(requestAmount, walletAddress, selectedWallet);
   };
 
   return (
@@ -42,12 +44,15 @@ const Withdraw = () => {
 
         {/* Balance Amount */}
         <div className="px-6 py-4 border-b text-white font-medium">
-          {selectedWallet === "roi" ? "ROI Wallet Balance" : "Main Wallet Balance"}:{" "}
+          {selectedWallet === "roi"
+            ? "ROI Wallet Balance"
+            : "Main Wallet Balance"}
+          :{" "}
           <span className="font-bold text-white">
             $
             {(selectedWallet === "roi"
-              ? customerProfileData?.roiWalletBalance
-              : customerProfileData?.mainWalletBalance
+              ? customerProfileData?.roiWallet
+              : customerProfileData?.mainWallet
             )?.toFixed(2) || "0.00"}
           </span>
         </div>

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { FaGlobe, FaUserFriends, FaWallet } from "react-icons/fa";
+import { FaGlobe, FaHistory, FaUserFriends, FaWallet } from "react-icons/fa";
 import { IoCopy } from "react-icons/io5";
 import { CustomerContext } from "../context/CustomerContext";
 import { toast } from "react-toastify";
@@ -126,7 +126,7 @@ const Dashboard = () => {
     },
     {
       title: "ROI to Level Income",
-      value: "$0",
+      value: `$${customerProfileData?.roiToLevelIncome?.toFixed(2) || "0.00"}`,
       color: "bg-blue-900",
       icon: <FaChartLine className="text-blue-400 h-6 w-6" />,
     },
@@ -192,14 +192,45 @@ const Dashboard = () => {
       heading: "Transactions",
       cards: [
         {
-          title: "Total Deposit",
+          title: "Last Investment",
+          value: `$${
+            customerProfileData?.lastInvestment?.toFixed(2) || "0.00"
+          }`,
+          color: "bg",
+          icon: <FaHistory className="text-green-400 h-6 w-6" />,
+        },
+        {
+          title: "Total Investment",
           value: `$${customerProfileData?.investment?.toFixed(2) || "0.00"}`,
           color: "bg",
           icon: <FaArrowCircleDown className="text-green-400 h-6 w-6" />,
         },
         {
-          title: "Total Withdrawal",
-          value: 0,
+          title: "Main Withdrawal Amount",
+          value: `$${
+            customerProfileData?.mainWithdrawalAmount?.toFixed(2) || "0.00"
+          }`,
+
+          color: "bg-purple-900",
+          icon: <FaArrowCircleUp className="text-purple-400 h-6 w-6" />,
+        },
+        {
+          title: "ROI Withdrawal Amount",
+          value: `$${
+            customerProfileData?.roiWithdrawalAmount?.toFixed(2) || "0.00"
+          }`,
+
+          color: "bg-purple-900",
+          icon: <FaArrowCircleUp className="text-purple-400 h-6 w-6" />,
+        },
+
+        {
+          title: "Total Withdrawal Amount",
+          value: `$${(
+            (customerProfileData?.mainWithdrawalAmount || 0) +
+            (customerProfileData?.roiWithdrawalAmount || 0)
+          ).toFixed(2)}`,
+
           color: "bg-purple-900",
           icon: <FaArrowCircleUp className="text-purple-400 h-6 w-6" />,
         },
@@ -232,48 +263,51 @@ const Dashboard = () => {
       cards: [
         {
           title: "Direct Team Members",
-          value: 0,
+          value: `${customerProfileData?.activeDirectTeamMembersCount || "0"}`,
           color: "",
           icon: <FaUsers className="h-6 w-6 text-indigo-400" />,
         },
         {
           title: "Level Team Members (3)",
-          value: 0,
+          value: `${customerProfileData?.totalLevelTeamMembersCount || "0"}`,
           color: "",
           icon: <FaUserFriends className="h-6 w-6 text-green-400" />,
         },
         {
           title: "Global Team Count",
-          value: 0,
+          value: `${customerProfileData?.totalWorldTeamCount || "0"}`,
+
           color: "",
           icon: <FaGlobe className="h-6 w-6 text-blue-400" />,
         },
       ],
     },
-    {
-      heading: "Non Active Team",
-      theme: "text-yellow-400",
-      cards: [
-        {
-          title: "Direct Team Members",
-          value: 0,
-          color: "",
-          icon: <FaUsers className="h-6 w-6 text-yellow-400" />,
-        },
-        {
-          title: "Level Team Members (3)",
-          value: 0,
-          color: "",
-          icon: <FaUserFriends className="h-6 w-6 text-orange-400" />,
-        },
-        {
-          title: "Global Team Count",
-          value: 0,
-          color: "",
-          icon: <FaGlobe className="h-6 w-6 text-red-400" />,
-        },
-      ],
-    },
+    // {
+    //   heading: "Non Active Team",
+    //   theme: "text-yellow-400",
+    //   cards: [
+    //     {
+    //       title: "Direct Team Members",
+    //       value: `${
+    //         customerProfileData?.inactiveDirectTeamMembersCount || "0"
+    //       }`,
+    //       color: "",
+    //       icon: <FaUsers className="h-6 w-6 text-yellow-400" />,
+    //     },
+    //     {
+    //       title: "Level Team Members (3)",
+    //       value: 0,
+    //       color: "",
+    //       icon: <FaUserFriends className="h-6 w-6 text-orange-400" />,
+    //     },
+    //     {
+    //       title: "Global Team Count",
+    //       value: 0,
+    //       color: "",
+    //       icon: <FaGlobe className="h-6 w-6 text-red-400" />,
+    //     },
+    //   ],
+    // },
   ];
 
   return (
