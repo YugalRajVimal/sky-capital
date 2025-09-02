@@ -54,6 +54,13 @@ const SignupForm = () => {
       toast.error("Password must be at least 8 characters long");
       return;
     }
+
+    if (formData.phoneNo.length !== 10) {
+      toast.error("Phone number must be 10 digits long");
+      return;
+    }
+
+
     if (!/^(?=.*[a-zA-Z])(?=.*[0-9]).*$/.test(formData.password)) {
       toast.error("Password must be alphanumeric");
       return;
@@ -101,7 +108,6 @@ const SignupForm = () => {
               placeholder="Sponsor ID"
               value={formData.sponsorId}
               onChange={handleChange}
-              required
               className="p-3 rounded-md bg-white text-black col-span-1 sm:col-span-2"
             />
             <input

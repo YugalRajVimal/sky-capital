@@ -164,11 +164,24 @@ const PurchaseSubscription = () => {
 
           <div className="mt-6">
             <input
-              type="number"
+              type="text" // Changed type from "number" to "text" to allow '$' symbol
               id="amount"
-              value={amount}
+              value={amount ? `$${amount}` : ''} // Display with '$' prefix if amount is not empty
               onWheel={(e) => e.target.blur()}
-              onChange={(e) => setAmount(e.target.value)}
+              onChange={(e) => {
+                const inputValue = e.target.value;
+                // Remove the '$' if present, and then ensure it's a valid number string
+                const cleanedValue = inputValue.startsWith('$') ? inputValue.substring(1) : inputValue;
+
+                // Further sanitize to allow only digits and a single decimal point
+                const numericValue = cleanedValue.replace(/[^0-9.]/g, '');
+
+                // Ensure only one decimal point is present
+                const parts = numericValue.split('.');
+                const finalValue = parts.length > 1 ? parts[0] + '.' + parts.slice(1).join('') : parts[0];
+
+                setAmount(finalValue);
+              }}
               placeholder="Enter your Investment Amount"
               className="w-full px-4 py-3 rounded-xl border border-gray-500 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9ae600]"
             />
