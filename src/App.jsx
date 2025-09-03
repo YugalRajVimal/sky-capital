@@ -102,6 +102,7 @@ import TenDaysRoyaltyAchiever from "./Admin/adminPages/TenDaysRoyaltyAchiever";
 import PurchaseSubscriptionHistory from "./pages/PurchaseSubscription/PurchaseSubscriptionHistory";
 import AllLogs from "./pages/AllLogs/AllLogs";
 import ReferTeamIncome from "./pages/Income Details/ReferIncome/ReferTeamIncome";
+import EditUsers from "./Admin/adminPages/EditUser";
 
 function AppLayout() {
   const location = useLocation();
@@ -210,6 +211,14 @@ function AppLayout() {
               element={
                 <AdminProtectedRoute>
                   <AllUsers />
+                </AdminProtectedRoute>
+              }
+            />
+            <Route
+              path="users/edit-users"
+              element={
+                <AdminProtectedRoute>
+                  <EditUsers />
                 </AdminProtectedRoute>
               }
             />

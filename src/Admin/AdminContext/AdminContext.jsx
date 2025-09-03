@@ -645,6 +645,33 @@ export const AdminProvider = ({ children }) => {
     }
   };
 
+  const updateUserDetails = async (userId, userData) => {
+    try {
+      const token = localStorage.getItem("admin-token");
+      const response = await axios.put(
+        `${import.meta.env.VITE_API_BASE_URL}/api/admin/update-users/${userId}`,
+        userData,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      if (response.status === 200) {
+        console.log(response.data);
+        toast.success(response.data.message);
+        return true;
+      } else {
+        toast.error(response?.data?.message || "Something went wrong");
+        return false;
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error(err?.response?.data?.message || "Something went wrong");
+      return false;
+    }
+  };
+
   return (
     <AdminContext.Provider
       value={{
@@ -671,6 +698,7 @@ export const AdminProvider = ({ children }) => {
         isSiteOnMaintenance,
         getBlockedUsers,
         unblockUser,
+        updateUserDetails,
       }}
     >
       {children}

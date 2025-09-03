@@ -91,6 +91,8 @@ const SidePanel = () => {
       subItems: [
         { name: "Subscribed User", link: "/admin/users/subscribed-user" },
         { name: "All User", link: "/admin/users/all-users" },
+        { name: "Edit User", link: "/admin/users/edit-users" },
+
         { name: "Blocked User", link: "/admin/users/blocked-users" },
       ],
     },
