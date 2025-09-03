@@ -152,7 +152,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="max-h-[90vh] h-[90vh] bg-[#20265d] overflow-y-auto shadow-md">
+    <div className="max-h-[90vh] h-[90vh] bg-[#030626] overflow-y-auto shadow-md">
       <div className="flex  flex-col relative  ">
         <div
           className={`${sidebarOpen ? "w-0 " : "w-60"}  ${

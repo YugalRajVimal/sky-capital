@@ -47,16 +47,19 @@ const Wallets = () => {
     {
       title: "ROI Wallet",
       value: `$${customerProfileData?.roiWallet?.toFixed(2) || "0.00"}`,
+       bg: "bg-gradient-to-br from-[#0f4c35] to-[#071812]",
       icon: <FaWallet className="text-blue-500 h-6 w-6" />,
     },
     {
       title: "Main Wallet",
       value: `$${customerProfileData?.mainWallet?.toFixed(2) || "0.00"}`,
+       bg: "bg-gradient-to-br from-[#3b246c] to-[#16082c]",
       icon: <FaWallet className="text-green-500 h-6 w-6" />,
     },
     {
       title: "Pending Wallet",
       value: `$${customerProfileData?.pendingWallet?.toFixed(2) || "0.00"}`,
+       bg: "bg-gradient-to-br from-[#18356b] to-[#07102c]",
       icon: <FaWallet className="text-red-500 h-6 w-6" />,
     },
   ];
@@ -72,7 +75,7 @@ const Wallets = () => {
               {incomeReports.map((wallet, idx) => (
                 <div
                   key={idx}
-                  className="p-5 rounded-lg flex justify-between items-center shadow-lg bg-gradient-to-br from-[#1e2550] to-[#14172b] border border-gray-700 hover:scale-[1.02] transition"
+                  className={`p-5 rounded-lg flex justify-between items-center shadow-lg ${wallet.bg} hover:scale-[1.02] transition`}
                 >
                   <div className="flex items-center gap-3">
                     {wallet.icon}
@@ -102,7 +105,7 @@ const Card = ({
   link,
 }) => (
   <div
-    className={`bg-[#20265d] text-white px-4 py-6 w-full shadow rounded-md relative flex flex-col  ${
+    className={`bg-[#030626] text-white px-4 py-6 w-full shadow rounded-md relative flex flex-col  ${
       withButtons ? "items-between" : "items-center"
     } justify-center gap-2 md:gap-6 overflow-hidden`}
   >

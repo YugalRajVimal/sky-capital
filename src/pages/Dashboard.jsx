@@ -43,16 +43,19 @@ const Dashboard = () => {
     {
       title: "ROI Wallet",
       value: `$${customerProfileData?.roiWallet?.toFixed(2) || "0.00"}`,
+      bg: "bg-gradient-to-br from-[#0f4c35] to-[#071812]",
       icon: <FaWallet className="text-blue-500 h-6 w-6" />,
     },
     {
       title: "Main Wallet",
       value: `$${customerProfileData?.mainWallet?.toFixed(2) || "0.00"}`,
+      bg: "bg-gradient-to-br from-[#3b246c] to-[#16082c]",
       icon: <FaWallet className="text-green-500 h-6 w-6" />,
     },
     {
       title: "Pending Wallet",
       value: `$${customerProfileData?.pendingWallet?.toFixed(2) || "0.00"}`,
+      bg: "bg-gradient-to-br from-[#18356b] to-[#07102c]",
       icon: <FaWallet className="text-red-500 h-6 w-6" />,
     },
   ];
@@ -110,30 +113,39 @@ const Dashboard = () => {
         (customerProfileData?.roiWallet || 0)
       ).toFixed(2)}`,
       color: "bg-green-900",
+      bg: "bg-gradient-to-br from-[#0f4c35] to-[#071812]",
       icon: <FaMoneyBillWave className="text-green-400 h-6 w-6" />,
     },
     {
       title: "ROI Income",
       value: `$${customerProfileData?.roiWallet?.toFixed(2) || "0.00"}`,
       color: "bg-orange-900",
+      bg: "bg-gradient-to-br from-[#3b246c] to-[#16082c]",
+
       icon: <FaCoins className="text-orange-400 h-6 w-6" />,
     },
     {
       title: "Refer Income",
       value: `$${customerProfileData?.referIncome?.toFixed(2) || "0.00"}`,
       color: "bg-purple-900",
+      bg: "bg-gradient-to-br from-[#18356b] to-[#07102c]",
+
       icon: <FaUsers className="text-purple-400 h-6 w-6" />,
     },
     {
       title: "ROI to Level Income",
       value: `$${customerProfileData?.roiToLevelIncome?.toFixed(2) || "0.00"}`,
       color: "bg-blue-900",
+      bg: "bg-gradient-to-br from-[#2c1806] to-[#251105]",
+
       icon: <FaChartLine className="text-blue-400 h-6 w-6" />,
     },
     {
       title: "Refer Bonus ",
       value: `$${customerProfileData?.referBonusIncome?.toFixed(2) || "0.00"}`,
       color: "bg-teal-900",
+      bg: "bg-gradient-to-br from-[#2f0f1f] to-[#190708]",
+
       icon: <FaGift className="text-teal-400 h-6 w-6" />,
     },
     {
@@ -142,6 +154,8 @@ const Dashboard = () => {
         customerProfileData?.rewardTeamBusinessIncome?.toFixed(2) || "0.00"
       }`,
       color: "bg-pink-900",
+      bg: "bg-gradient-to-br from-[#1b2808] to-[#06130e]",
+
       icon: <FaBusinessTime className="text-pink-400 h-6 w-6" />,
     },
   ];
@@ -196,13 +210,16 @@ const Dashboard = () => {
           value: `$${
             customerProfileData?.lastInvestment?.toFixed(2) || "0.00"
           }`,
+
           color: "bg",
+          bg: "bg-gradient-to-br from-[#3b246c] to-[#16082c]",
           icon: <FaHistory className="text-green-400 h-6 w-6" />,
         },
         {
           title: "Total Investment",
           value: `$${customerProfileData?.investment?.toFixed(2) || "0.00"}`,
           color: "bg",
+          bg: "bg-gradient-to-br from-[#0f4c35] to-[#071812]",
           icon: <FaArrowCircleDown className="text-green-400 h-6 w-6" />,
         },
         {
@@ -211,7 +228,8 @@ const Dashboard = () => {
             customerProfileData?.mainWithdrawalAmount?.toFixed(2) || "0.00"
           }`,
 
-          color: "bg-purple-900",
+          color: "bg",
+          bg: "bg-gradient-to-br from-[#18356b] to-[#07102c]",
           icon: <FaArrowCircleUp className="text-purple-400 h-6 w-6" />,
         },
         {
@@ -220,7 +238,8 @@ const Dashboard = () => {
             customerProfileData?.roiWithdrawalAmount?.toFixed(2) || "0.00"
           }`,
 
-          color: "bg-purple-900",
+          color: "bg",
+          bg: "bg-gradient-to-br from-[#2c1806] to-[#251105]",
           icon: <FaArrowCircleUp className="text-purple-400 h-6 w-6" />,
         },
 
@@ -231,7 +250,8 @@ const Dashboard = () => {
             (customerProfileData?.roiWithdrawalAmount || 0)
           ).toFixed(2)}`,
 
-          color: "bg-purple-900",
+          color: "bg",
+          bg: "bg-gradient-to-br from-[#2f0f1f] to-[#190708]",
           icon: <FaArrowCircleUp className="text-purple-400 h-6 w-6" />,
         },
       ],
@@ -264,20 +284,19 @@ const Dashboard = () => {
         {
           title: "Direct Team Members",
           value: `${customerProfileData?.activeDirectTeamMembersCount || "0"}`,
-          color: "",
+          color: "bg-gradient-to-br from-[#0f4c35] to-[#071812]",
           icon: <FaUsers className="h-6 w-6 text-indigo-400" />,
         },
         {
           title: "Level Team Members (3)",
           value: `${customerProfileData?.totalLevelTeamMembersCount || "0"}`,
-          color: "",
+          color: "bg-gradient-to-br from-[#18356b] to-[#07102c]",
           icon: <FaUserFriends className="h-6 w-6 text-green-400" />,
         },
         {
           title: "Global Team Count",
           value: `${customerProfileData?.totalWorldTeamCount || "0"}`,
-
-          color: "",
+          color: "bg-gradient-to-br from-[#2c1806] to-[#251105]",
           icon: <FaGlobe className="h-6 w-6 text-blue-400" />,
         },
       ],
@@ -311,7 +330,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="w-full h-full px-4 py-6 overflow-y-auto text-white space-y-8">
+    <div className="w-full h-full  px-4 py-6 overflow-y-auto text-white space-y-8">
       {/* Wallet Section */}
       <div>
         <h2 className="text-xl font-bold mb-4">Wallets</h2>
@@ -319,7 +338,7 @@ const Dashboard = () => {
           {walletReports.map((wallet, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-lg flex justify-between items-center shadow-lg bg-gradient-to-br from-[#1e2550] to-[#14172b] border border-gray-700 hover:scale-[1.02] transition"
+              className={`p-5 rounded-lg flex justify-between items-center shadow-lg ${wallet.bg} hover:scale-[1.02] transition`}
             >
               <div className="flex items-center gap-3">
                 {wallet.icon}
@@ -336,7 +355,7 @@ const Dashboard = () => {
         <h2 className="text-xl font-bold mb-4">Profile & Referral</h2>
         <div className="flex flex-col md:flex-row gap-6">
           {/* Profile */}
-          <div className="w-full md:w-1/2 p-5 rounded-lg flex justify-start gap-4 items-center shadow-lg bg-gradient-to-br from-[#1e2550] to-[#14172b] border border-gray-700 hover:scale-[1.02] transition">
+          <div className="w-full md:w-1/2 p-5 rounded-lg flex justify-start gap-4 items-center shadow-lg bg-gradient-to-br from-[#0f4c35] to-[#071812]  hover:scale-[1.02] transition">
             <div className="h-16 w-16 rounded-full bg-white flex justify-center items-center text-black font-bold">
               {customerProfileData?.name?.[0] || "U"}
             </div>
@@ -351,7 +370,7 @@ const Dashboard = () => {
           </div>
 
           {/* Referral */}
-          <div className="w-full md:w-1/2 p-5 rounded-lg flex md:flex-row flex-col gap-4 justify-between md:items-center shadow-lg bg-gradient-to-br from-[#1e2550] to-[#14172b] border border-gray-700 hover:scale-[1.02] transition">
+          <div className="w-full md:w-1/2 p-5 rounded-lg flex md:flex-row flex-col gap-4 justify-between md:items-center bg-gradient-to-br from-[#2c1806] to-[#251105] hover:scale-[1.02] transition">
             <div>
               <div className="font-semibold">Your Referral Link</div>
               <div className="text-sm text-gray-300 truncate ">
@@ -383,7 +402,7 @@ const Dashboard = () => {
           {incomeCards.map((card, idx) => (
             <div
               key={idx}
-              className={`p-5 rounded-lg flex justify-between items-center shadow-lg bg-gradient-to-br from-[#1e2550] to-[#14172b] border border-gray-700 hover:scale-[1.02] transition`}
+              className={`p-5 rounded-lg flex justify-between items-center  ${card.bg}   hover:scale-[1.02] transition`}
             >
               <div className="flex items-center gap-3">
                 {card.icon}
@@ -425,7 +444,7 @@ const Dashboard = () => {
                 {section.cards.map((card, i) => (
                   <div
                     key={idx}
-                    className={`p-5 rounded-lg flex justify-between items-center shadow-lg bg-gradient-to-br from-[#1e2550] to-[#14172b] border border-gray-700 hover:scale-[1.02] transition`}
+                    className={`p-5 rounded-lg flex justify-between items-center ${card.bg} hover:scale-[1.02] transition`}
                   >
                     <div className="flex items-center gap-3">
                       {card.icon}
@@ -455,7 +474,7 @@ const Dashboard = () => {
                 {section.cards.map((card, i) => (
                   <div
                     key={idx}
-                    className={`p-5 rounded-lg flex justify-between items-center shadow-lg bg-gradient-to-br from-[#1e2550] to-[#14172b] border border-gray-700 hover:scale-[1.02] transition`}
+                    className={`p-5 rounded-lg flex justify-between items-center ${card.color} hover:scale-[1.02] transition`}
                   >
                     <div className="flex items-center gap-3">
                       {card.icon}

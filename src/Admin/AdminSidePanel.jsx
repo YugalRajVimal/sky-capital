@@ -180,7 +180,7 @@ const SidePanel = () => {
           sidebarOpen ? "w-0 " : "w-[90vw] md:w-full"
         }  h-[92vh] overflow-y-auto hide-scrollbar ${
           sidebarOpen ? "p-0" : "p-4"
-        } shadow-md space-y-1 bg-[#20265d] transition-all duration-[0.4s]`}
+        } shadow-md space-y-1 bg-[#030626] transition-all duration-[0.4s]`}
       >
         {menuItems.map((item, index) => {
           const isActive = location.pathname === item.link;

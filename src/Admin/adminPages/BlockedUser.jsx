@@ -59,7 +59,7 @@ const BlockedUsers = () => {
   const currentData = filteredTeam.slice(startIndex, startIndex + entries);
 
   return (
-    <div className="grow-1 mx-2 sm:mx-5 mt-2 p-3 sm:p-5 rounded-2xl bg-[#20265d] shadow-lg h-full overflow-y-auto">
+    <div className="grow-1 mx-2 sm:mx-5 mt-2 p-3 sm:p-5 rounded-2xl bg-[#030626] shadow-lg h-full overflow-y-auto">
       <h2 className="text-base sm:text-xl font-semibold text-white px-4 py-2 sm:py-3 rounded-t-xl">
         👥 Subscription Requests
       </h2>

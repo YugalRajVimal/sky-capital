@@ -17,9 +17,9 @@ const Profile = () => {
 
   return (
     <div className="min-h-[90vh] w-full sm:h-full flex justify-center items-start py-10 px-4 rounded-2xl overflow-hidden hide-scrollbar">
-      <div className="w-full max-w-3xl bg-[#20265d] rounded-2xl shadow-lg h-[80vh] overflow-x-auto hide-scrollbar">
+      <div className="w-full max-w-3xl bg-[#030626] rounded-2xl shadow-lg h-[80vh] overflow-x-auto hide-scrollbar">
         {/* Header */}
-        <div className="bg-[#20265d] p-6 text-white flex items-center gap-4 rounded-t-2xl border-x-0 border-t-0 border-b-[1px] border-white">
+        <div className="bg-[#030626] p-6 text-white flex items-center gap-4 rounded-t-2xl border-x-0 border-t-0 border-b-[1px] border-white">
           <FaUserCircle className="text-5xl" />
           <div>
             <h2 className="text-2xl font-semibold">

@@ -49,7 +49,7 @@ const RewardTeamBonus = () => {
   ];
 
   return (
-    <div className="grow-1 w-full h-full mt-2  p-3 p-5 rounded-2xl bg-[#20265d] shadow-lg overflow-y-auto pb-10 md:pb-3">
+    <div className="grow-1 w-full h-full mt-2  p-3 p-5 rounded-2xl bg-[#030626] shadow-lg overflow-y-auto pb-10 md:pb-3">
       {/* Header */}
       <div className="px-4 py-3">
         <h2 className="text-white font-semibold text-lg">

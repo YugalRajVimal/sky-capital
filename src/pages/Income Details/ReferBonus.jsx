@@ -25,7 +25,7 @@ const ReferBonus = () => {
   const directReferrals = customerProfileData?.referredUserHistory?.length || 0;
 
   return (
-    <div className="bg-[#20265d] w-full  mt-2 rounded-xl shadow-lg mt-10 overflow-hidden">
+    <div className="bg-[#030626] w-full  mt-2 rounded-xl shadow-lg mt-10 overflow-hidden">
       {/* Header */}
       <div className="px-4 py-3">
         <h2 className="text-white font-semibold text-lg">Referral Bonus</h2>

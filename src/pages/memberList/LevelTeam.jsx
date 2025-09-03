@@ -53,7 +53,7 @@ const LevelTeam = (props) => {
     dateStr ? new Date(dateStr).toLocaleDateString() : "N/A";
 
   return (
-    <div className="grow-1 w-full h-full mt-2  p-3 p-5 rounded-2xl bg-[#20265d] shadow-lg overflow-y-auto pb-10 md:pb-3">
+    <div className="grow-1 w-full h-full mt-2  p-3 p-5 rounded-2xl bg-[#030626] shadow-lg overflow-y-auto pb-10 md:pb-3">
       <h2 className="text-xl font-semibold text-white md:px-6 py-3">
         👥 Level {levelIndex} Users
       </h2>
@@ -132,9 +132,7 @@ const LevelTeam = (props) => {
                   <td className="p-2">{u.user?.email || "-"}</td>
                   <td className="p-2">{u.user?.phoneNo || "-"}</td>
                   {/* <td className="p-2">{u.user?.sponsorName || "-"}</td> */}
-                  <td className="p-2">
-                    {u.user?.referalId }
-                  </td>
+                  <td className="p-2">{u.user?.referalId}</td>
                   {/* <td className="p-2">{formatDate(u?.date)}</td>
                   <td className="p-2">{formatDate(u.user?.subscribedOn)}</td> */}
                   {/* <td className="p-2">

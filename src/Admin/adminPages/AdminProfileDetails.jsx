@@ -73,7 +73,7 @@ const AdmindashboardDetails = () => {
         </div>
       </div> */}
       <div className="w-full h-fit  my-4 rounded-md">
-        <div className="max-w-xl text-left  p-6 bg-[#20265d] rounded-md">
+        <div className="max-w-xl text-left  p-6 bg-[#030626] rounded-md">
           <h2 className="text-2xl font-semibold text-white mb-1">
             Profile Information
           </h2>
@@ -108,9 +108,9 @@ const AdmindashboardDetails = () => {
           </form>
         </div>
       </div>
-      <div className="w-full h-fit  shadow shadow-md bg-[#20265d]  my-4 rounded-md">
+      <div className="w-full h-fit  shadow shadow-md bg-[#030626]  my-4 rounded-md">
         {/* Header */}
-        <div className="max-w-xl text-left  p-6 bg-[#20265d] rounded-md">
+        <div className="max-w-xl text-left  p-6 bg-[#030626] rounded-md">
           <h2 className="text-2xl font-semibold text-white mb-1">
             Reset Password
           </h2>

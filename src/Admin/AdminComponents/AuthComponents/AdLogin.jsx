@@ -31,7 +31,7 @@ const AdLogin = () => {
     <div className="min-h-screen flex items-center justify-center w-screen px-4 py-10">
       <form
         onSubmit={handleSubmit}
-        className="bg-[#20265d] text-white p-6 md:p-10 rounded-xl  w-full md:w-1/2 shadow-lg"
+        className="bg-[#030626] text-white p-6 md:p-10 rounded-xl  w-full md:w-1/2 shadow-lg"
       >
         <h2 className="text-2xl font-bold text-center mb-2">Welcome Admin!</h2>
         <p className="text-center text-gray-300 mb-6">Login to Admin Panel</p>

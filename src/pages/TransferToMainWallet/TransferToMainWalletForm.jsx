@@ -35,7 +35,7 @@ const TransferToMainWallet = () => {
 
   return (
     <div className="p-4 w-full md:w-1/2 mx-auto">
-      <div className="bg-[#20265d] shadow rounded-xl overflow-hidden">
+      <div className="bg-[#030626] shadow rounded-xl overflow-hidden">
         {/* Header */}
         <div className=" px-6 py-3 text-lg font-bold text-white">
           Transfer Amount to Main Wallet

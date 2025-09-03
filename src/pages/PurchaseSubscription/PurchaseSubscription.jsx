@@ -76,7 +76,7 @@ const PurchaseSubscription = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br h-full from-[#20265d] to-[#13183a] w-full mt-3 p-6 md:p-10 rounded-3xl shadow-xl text-white overflow-y-auto">
+    <div className="bg-gradient-to-br h-full from-[#030626] to-[#13183a] w-full mt-3 p-6 md:p-10 rounded-3xl shadow-xl text-white overflow-y-auto">
       <div className="max-w-3xl mx-auto flex flex-col items-center">
         {/* Title */}
         <h2 className="text-3xl md:text-5xl font-bold text-[#9ae600] mb-6 text-center">
@@ -166,19 +166,24 @@ const PurchaseSubscription = () => {
             <input
               type="text" // Changed type from "number" to "text" to allow '$' symbol
               id="amount"
-              value={amount ? `$${amount}` : ''} // Display with '$' prefix if amount is not empty
+              value={amount ? `$${amount}` : ""} // Display with '$' prefix if amount is not empty
               onWheel={(e) => e.target.blur()}
               onChange={(e) => {
                 const inputValue = e.target.value;
                 // Remove the '$' if present, and then ensure it's a valid number string
-                const cleanedValue = inputValue.startsWith('$') ? inputValue.substring(1) : inputValue;
+                const cleanedValue = inputValue.startsWith("$")
+                  ? inputValue.substring(1)
+                  : inputValue;
 
                 // Further sanitize to allow only digits and a single decimal point
-                const numericValue = cleanedValue.replace(/[^0-9.]/g, '');
+                const numericValue = cleanedValue.replace(/[^0-9.]/g, "");
 
                 // Ensure only one decimal point is present
-                const parts = numericValue.split('.');
-                const finalValue = parts.length > 1 ? parts[0] + '.' + parts.slice(1).join('') : parts[0];
+                const parts = numericValue.split(".");
+                const finalValue =
+                  parts.length > 1
+                    ? parts[0] + "." + parts.slice(1).join("")
+                    : parts[0];
 
                 setAmount(finalValue);
               }}

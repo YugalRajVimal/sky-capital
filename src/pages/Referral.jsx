@@ -35,7 +35,7 @@ const ReferralLinkBox = () => {
   };
 
   return (
-    <div className="bg-[#20265d]/90 max-w-7xl mx-auto w-full backdrop-blur-xl mx-5 mt-10 p-6 rounded-3xl shadow-xl border border-white/10">
+    <div className="bg-[#030626]/90 max-w-7xl mx-auto w-full backdrop-blur-xl mx-5 mt-10 p-6 rounded-3xl shadow-xl border border-white/10">
       <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
         🔗 Your Referral Link
       </h2>

@@ -124,7 +124,7 @@ const RoyaltyAchieversMain = () => {
   );
 
   return (
-    <div className=" p-3 sm:p-5 rounded-2xl bg-[#20265d] shadow-lg h-full overflow-y-auto">
+    <div className=" p-3 sm:p-5 rounded-2xl bg-[#030626] shadow-lg h-full overflow-y-auto">
       <div className="flex justify-between">
         <h2 className="text-base sm:text-xl font-semibold text-white px-4 py-2 sm:py-3">
           👥 Royalty Achiever List

@@ -36,7 +36,7 @@ const Withdraw = () => {
 
   return (
     <div className="p-4 w-full md:w-1/2 mx-auto flex justify-center items-center flex-col">
-      <div className="bg-[#20265d] w-full shadow rounded-xl overflow-hidden mb-2">
+      <div className="bg-[#030626] w-full shadow rounded-xl overflow-hidden mb-2">
         {/* Header */}
         <div className=" px-6 py-3 text-lg font-bold text-white">
           Withdraw Amount

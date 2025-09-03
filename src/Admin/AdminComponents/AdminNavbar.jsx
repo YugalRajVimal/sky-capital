@@ -15,7 +15,7 @@ const AdminNavbar = () => {
   }
 
   return (
-    <nav className="bg-[#20265d] flex items-center justify-between px-4 py-3 shadow shadow-b h-full w-screen">
+    <nav className="bg-[#030626] flex items-center justify-between px-4 py-3 shadow shadow-b h-full w-screen">
       {/* Left: Logo + Hamburger */}
       <div className="w-1/3 flex justify-start items-center">
         <button
@@ -40,14 +40,14 @@ const AdminNavbar = () => {
       <div className="w-1/3 flex flex-col justify-center items-end relative">
         <div
           onClick={handleDropdown}
-          className="flex w-fit items-center gap-2 bg-[#20265d] px-3 py-1 border border-white-[1px] rounded-md text-white cursor-pointer text-sm md:text-base hover:text-black hover:bg-gray-200"
+          className="flex w-fit items-center gap-2 bg-[#030626] px-3 py-1 border border-white-[1px] rounded-md text-white cursor-pointer text-sm md:text-base hover:text-black hover:bg-gray-200"
         >
           <span className="hidden sm:block">Admin</span>
           <IoMdArrowDropdown />
         </div>
         {isDropDownOpen && (
           <ul
-            className={`absolute top-[100%] bg-[#20265d] rounded-md shadow-lg text-base ${
+            className={`absolute top-[100%] bg-[#030626] rounded-md shadow-lg text-base ${
               isDropDownOpen ? "animate-slideIn" : ""
             }`}
           >

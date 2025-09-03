@@ -50,7 +50,7 @@ const ChangePassword = () => {
   };
 
   return (
-    <div className="bg-[#20265d] bg-opacity-80 rounded-2xl shadow-2xl max-w-xl mx-auto w-full mt-12 backdrop-blur-lg border  overflow-hidden">
+    <div className="bg-[#030626] bg-opacity-80 rounded-2xl shadow-2xl max-w-xl mx-auto w-full mt-12 backdrop-blur-lg border  overflow-hidden">
       {/* Header */}
       <div className="  px-6 py-4 flex items-center justify-between">
         <h3 className="text-lg sm:text-xl font-semibold text-white tracking-wide">

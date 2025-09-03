@@ -33,7 +33,7 @@ const NotificationAddGetDelete = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-[#20265d] rounded-lg shadow-md border border-gray-200 text-white">
+    <div className="max-w-md mx-auto mt-10 p-6 bg-[#030626] rounded-lg shadow-md border border-gray-200 text-white">
       <h2 className="text-2xl font-bold mb-4 text-center text-white">
         Notification Manager
       </h2>
@@ -44,7 +44,9 @@ const NotificationAddGetDelete = () => {
         </label>
         {notification ? (
           <div className="bg-gray-900 p-3 rounded-md flex justify-between items-center">
-            <textarea className="text-white min-h-[200px] w-full">{notification}</textarea>
+            <textarea className="text-white min-h-[200px] w-full">
+              {notification}
+            </textarea>
             <button
               onClick={handleDeleteNotification}
               className="ml-4 px-3 py-1 text-sm bg-red-500 hover:bg-red-600 text-white rounded-md"

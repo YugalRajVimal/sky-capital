@@ -3,7 +3,7 @@ import React from "react";
 const HelpPage = () => {
   return (
     <div className="flex flex-col items-center justify-center h-full w-full px-4 ">
-      <div className="bg-[#20265d] p-8 rounded-2xl shadow-lg max-w-md text-center p-4">
+      <div className="bg-[#030626] p-8 rounded-2xl shadow-lg max-w-md text-center p-4">
         <h1 className="text-3xl font-bold text-gray-200 mb-4">Need Help?</h1>
         <p className="text-gray-100 mb-6">
           If you’re facing any issues or simply want to talk about something —

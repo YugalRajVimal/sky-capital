@@ -43,7 +43,7 @@ const WeeklyRoyaltyAchiever = () => {
     dateStr ? new Date(dateStr).toLocaleDateString() : "N/A";
 
   return (
-    <div className="grow-1 w-full    p-3 sm:p-5 rounded-2xl bg-[#20265d] shadow-lg h-full overflow-y-auto">
+    <div className="grow-1 w-full    p-3 sm:p-5 rounded-2xl bg-[#030626] shadow-lg h-full overflow-y-auto">
       <h2 className="text-base sm:text-xl font-semibold  text-white px-4 py-2 sm:py-3 rounded-t-xl">
         👥 Weekly Royalty Achiever List
       </h2>

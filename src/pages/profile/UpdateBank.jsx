@@ -6,7 +6,6 @@ const UpdateBank = () => {
   const [idType, setIdType] = useState("");
   const [bepAddress, setBepAddress] = useState("");
 
-
   const { updateBankDetails } = useContext(CustomerContext);
   const handleUpdateBankDetails = async () => {
     if (!idType || !bepAddress) {
@@ -21,7 +20,7 @@ const UpdateBank = () => {
       {/* Main Content */}
       <main className="flex-1 p-4 w-full">
         {/* PAYMENT OPTION BOX */}
-        <div className="bg-[#20265d] rounded-xl overflow-hidden shadow-lg max-w-xl mx-auto w-full">
+        <div className="bg-[#030626] rounded-xl overflow-hidden shadow-lg max-w-xl mx-auto w-full">
           {/* Header */}
           <div className="px-4 py-3 flex items-center justify-between flex-wrap gap-2">
             <h3 className="font-bold text-white tracking-wide text-base sm:text-lg">
@@ -55,7 +54,7 @@ const UpdateBank = () => {
 
             <button
               onClick={handleUpdateBankDetails}
-              className="bg-[#9ae600] hover:bg-[#20265d] text-black font-bold py-2 px-4 rounded my-4"
+              className="bg-[#9ae600] hover:bg-[#030626] text-black font-bold py-2 px-4 rounded my-4"
             >
               Update Wallet Details
             </button>

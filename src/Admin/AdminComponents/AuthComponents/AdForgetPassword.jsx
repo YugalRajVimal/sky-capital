@@ -36,7 +36,7 @@ const AdForgetPassword = () => {
     <div className="min-h-screen flex items-center justify-center w-screen  z-50">
       <form
         onSubmit={showOtpInput ? handleOtpSubmit : handleSubmit}
-        className="bg-[#20265d] w-full h-full text-white p-6 md:p-10 rounded-xl w-full md:w-1/2 shadow-lg"
+        className="bg-[#030626] w-full h-full text-white p-6 md:p-10 rounded-xl w-full md:w-1/2 shadow-lg"
       >
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
           {showOtpInput ? "Enter OTP" : "Let's Get Started!"}

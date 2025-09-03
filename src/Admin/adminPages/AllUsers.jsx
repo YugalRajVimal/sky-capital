@@ -54,7 +54,7 @@ const AllUsers = () => {
   };
 
   return (
-    <div className="grow-1 w-full p-3 sm:p-5 rounded-2xl bg-[#20265d] shadow-lg h-full overflow-y-auto">
+    <div className="grow-1 w-full p-3 sm:p-5 rounded-2xl bg-[#030626] shadow-lg h-full overflow-y-auto">
       <h2 className="text-base sm:text-xl font-semibold text-white px-4 py-2 sm:py-3 rounded-t-xl">
         👥 All Users List
       </h2>
@@ -111,7 +111,10 @@ const AllUsers = () => {
           <tbody>
             {currentData?.length === 0 ? (
               <tr>
-                <td colSpan="10" className="text-center text-gray-500 py-6 bg-gray-50">
+                <td
+                  colSpan="10"
+                  className="text-center text-gray-500 py-6 bg-gray-50"
+                >
                   No data available in table
                 </td>
               </tr>
@@ -148,8 +151,7 @@ const AllUsers = () => {
       {/* Pagination */}
       <div className="flex flex-col sm:flex-row justify-between items-center p-4 text-sm text-gray-600 gap-2 text-white">
         <div>
-          Showing{" "}
-          {totalEntries === 0 ? 0 : startIndex + 1} to{" "}
+          Showing {totalEntries === 0 ? 0 : startIndex + 1} to{" "}
           {Math.min(endIndex, totalEntries)} of {totalEntries} entries
         </div>
         <div className="flex gap-2">

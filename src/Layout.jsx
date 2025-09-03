@@ -13,8 +13,6 @@ const Layout = ({ isLoginPage }) => {
   const [notificationText, setNotificationText] = useState("");
   const [showCloseButton, setShowCloseButton] = useState(false);
 
-
-
   useEffect(() => {
     const fetchNotification = async () => {
       const data = await getNotification();
@@ -59,7 +57,7 @@ const Layout = ({ isLoginPage }) => {
               <p className="font-semibold text-lg flex gap-2 items-center">
                 <FaBullhorn /> Notification
               </p>
-              <p className="text-sm bg-[#20265d] text-gray-100 p-2 min-w-[250px] rounded-md mt-1 leading-snug whitespace-pre-wrap break-words pr-4">
+              <p className="text-sm bg-[#030626] text-gray-100 p-2 min-w-[250px] rounded-md mt-1 leading-snug whitespace-pre-wrap break-words pr-4">
                 {notificationText}
               </p>
             </div>
@@ -76,7 +74,7 @@ const Layout = ({ isLoginPage }) => {
       >
         <div className="h-full">{!isLoginPage && <Sidebar />}</div>
         <div
-          className={`flex h-full w-full justify-start items-start px-2 pb-6`}
+          className={`flex h-full w-full justify-start bg-black items-start px-2 pb-6`}
         >
           <Outlet />
         </div>

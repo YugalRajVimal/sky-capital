@@ -51,7 +51,7 @@ const AdminDashboard = () => {
       </p>
 
       {/* Admin Info */}
-      <div className="bg-[#20265d] rounded-2xl p-6 shadow-lg mb-6 ">
+      <div className="bg-[#030626] rounded-2xl p-6 shadow-lg mb-6 ">
         <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
           <span role="img" aria-label="admin">
             👨‍💼
@@ -129,7 +129,7 @@ const AdminDashboard = () => {
 
 // ========== Reusable Chart Card ==========
 const ChartCard = ({ title, color, dataKey, data }) => (
-  <div className="bg-[#20265d] rounded-xl p-4 shadow-md">
+  <div className="bg-[#030626] rounded-xl p-4 shadow-md">
     <h2 className="text-lg font-semibold mb-2">{title}</h2>
     <ResponsiveContainer width="100%" height={200}>
       <BarChart data={data}>
@@ -147,7 +147,7 @@ const ChartCard = ({ title, color, dataKey, data }) => (
 // ========== Reusable Stat Card ==========
 const StatCard = ({ icon, label, value, color }) => (
   <div
-    className={`bg-[#20265d] p-4 rounded-xl shadow-md border-t-4 border-${color}-500`}
+    className={`bg-[#030626] p-4 rounded-xl shadow-md border-t-4 border-${color}-500`}
   >
     <div className="flex items-center gap-3">
       <div className={`text-${color}-500 text-2xl`}>{icon}</div>

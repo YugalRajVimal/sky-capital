@@ -14,7 +14,7 @@ const Navbar = () => {
   // }
 
   return (
-    <nav className="relative bg-[#20265d] h-full flex items-center justify-between px-4 py-[2px] shadow shadow-b w-screen">
+    <nav className="relative bg-[#030626] h-full flex items-center justify-between px-4 py-[2px] shadow shadow-b w-screen">
       {/* Left: Logo + Hamburger */}
       <div className="w-1/2 flex justify-start items-center pl-4 h-full gap-4">
         <button

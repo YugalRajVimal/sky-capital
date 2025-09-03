@@ -51,7 +51,7 @@ const DirectTeamTable = () => {
   };
 
   return (
-    <div className="grow-1 w-full h-full mt-2 p-3 sm:p-5 rounded-2xl bg-[#20265d] shadow-lg overflow-y-auto">
+    <div className="grow-1 w-full h-full mt-2 p-3 sm:p-5 rounded-2xl bg-[#030626] shadow-lg overflow-y-auto">
       <h2 className="text-base sm:text-xl font-semibold text-white px-4 py-2 sm:py-3 rounded-t-xl">
         👥 Direct Team
       </h2>
