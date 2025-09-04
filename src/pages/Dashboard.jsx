@@ -17,6 +17,7 @@ import {
   FaShoppingCart,
   FaChartLine,
 } from "react-icons/fa";
+import TradingViewChart from "../components/TradingChart";
 
 const Dashboard = () => {
   const { getCustomerProfileDetails } = useContext(CustomerContext);
@@ -489,6 +490,10 @@ const Dashboard = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      <div>
+        <TradingViewChart />
       </div>
     </div>
   );
